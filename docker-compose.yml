@@ -1,0 +1,10 @@
+services:
+  discordhooks:
+    build: .
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./webhook_map.json:/app/webhook_map.json  # マウントポイントを設定
+    environment:
+      - PORT=8080
+    restart: always
